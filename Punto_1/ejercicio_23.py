@@ -25,7 +25,7 @@ class EcuacionApp:
         self.raiz = raiz
         self.raiz.title("Ejercicio 23")
 
-        # Etiquetas y entradas
+        
         tk.Label(raiz, text="Valor de A:").grid(row=0, column=0, padx=10, pady=5)
         self.a_entry = tk.Entry(raiz)
         self.a_entry.grid(row=0, column=1, padx=10, pady=5)
@@ -37,12 +37,10 @@ class EcuacionApp:
         tk.Label(raiz, text="Valor de C:").grid(row=2, column=0, padx=10, pady=5)
         self.c_entry = tk.Entry(raiz)
         self.c_entry.grid(row=2, column=1, padx=10, pady=5)
-
-        # Botones
+      
         tk.Button(raiz, text="Calcular", command=self.calcular).grid(row=3, column=0, padx=10, pady=5)
         tk.Button(raiz, text="Limpiar", command=self.limpiar).grid(row=3, column=1, padx=10, pady=5)
 
-        # Resultados
         self.resultado_label = tk.Label(raiz, text="Resultado: -", anchor="w", justify="left")
         self.resultado_label.grid(row=4, column=0, columnspan=2, padx=10, pady=5)
 
@@ -65,14 +63,12 @@ class EcuacionApp:
             self.resultado_label.config(text="Resultado: NaN\nError en los datos de entrada.")
 
     def limpiar(self):
-        # Limpiar entradas y resultados
+        
         self.a_entry.delete(0, tk.END)
         self.b_entry.delete(0, tk.END)
         self.c_entry.delete(0, tk.END)
         self.resultado_label.config(text="Resultado: -")
 
-
-# Crear la ventana principal
 raiz = tk.Tk()
 app = EcuacionApp(raiz)
 raiz.mainloop()
